@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>EOS - members</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .php-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var tryItOutBaseUrl = "http://eos-members.test";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-4.35.0.js"></script>
+
+    <script src="../docs/js/theme-default-4.35.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;php&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-members" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="members">
+                    <a href="#members">Members</a>
+                </li>
+                                    <ul id="tocify-subheader-members" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="members-GETapi-members">
+                                <a href="#members-GETapi-members">Get a list of members</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="members-GETapi-members--member_id-">
+                                <a href="#members-GETapi-members--member_id-">Get a member</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="members-POSTapi-members">
+                                <a href="#members-POSTapi-members">Store a member</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="members-PUTapi-members--member_id-">
+                                <a href="#members-PUTapi-members--member_id-">Update a member</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="members-DELETEapi-members--member_id-">
+                                <a href="#members-DELETEapi-members--member_id-">Delete a member</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="members-POSTapi-members--member_id--member_tag--member_tag_id--link">
+                                <a href="#members-POSTapi-members--member_id--member_tag--member_tag_id--link">Attach a member tag to a member</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+    <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: April 22, 2024</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<aside>
+    <strong>Base URL</strong>: <code>http://eos-members.test</code>
+</aside>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="members">Members</h1>
+
+    
+
+                                <h2 id="members-GETapi-members">Get a list of members</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-members">
+<blockquote>Example request:</blockquote>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://eos-members.test/api/members';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'query' =&gt; [
+            'with' =&gt; 'memberTags',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://eos-members.test/api/members"
+);
+
+const params = {
+    "with": "memberTags",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-members">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;first_name&quot;: &quot;Jasper&quot;,
+            &quot;last_name&quot;: &quot;Willms&quot;,
+            &quot;email&quot;: &quot;jwalker@yahoo.com&quot;,
+            &quot;birthdate&quot;: &quot;1977-08-01&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;value&quot;: &quot;neque&quot;,
+                    &quot;member_id&quot;: 1
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;value&quot;: &quot;voluptas&quot;,
+                    &quot;member_id&quot;: 1
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;value&quot;: &quot;quia&quot;,
+                    &quot;member_id&quot;: 1
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;value&quot;: &quot;animi&quot;,
+                    &quot;member_id&quot;: 1
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;value&quot;: &quot;at&quot;,
+                    &quot;member_id&quot;: 1
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;first_name&quot;: &quot;Chauncey&quot;,
+            &quot;last_name&quot;: &quot;Braun&quot;,
+            &quot;email&quot;: &quot;wilber02@yahoo.com&quot;,
+            &quot;birthdate&quot;: &quot;1972-12-08&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: []
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;first_name&quot;: &quot;Melvina&quot;,
+            &quot;last_name&quot;: &quot;Volkman&quot;,
+            &quot;email&quot;: &quot;tad86@greenfelder.biz&quot;,
+            &quot;birthdate&quot;: &quot;2010-08-13&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: []
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;first_name&quot;: &quot;Elissa&quot;,
+            &quot;last_name&quot;: &quot;Fisher&quot;,
+            &quot;email&quot;: &quot;henri.brakus@hotmail.com&quot;,
+            &quot;birthdate&quot;: &quot;1994-10-21&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: []
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;first_name&quot;: &quot;Shanon&quot;,
+            &quot;last_name&quot;: &quot;Wisozk&quot;,
+            &quot;email&quot;: &quot;rosella.hoppe@corwin.com&quot;,
+            &quot;birthdate&quot;: &quot;2008-11-14&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: []
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;first_name&quot;: &quot;Araceli&quot;,
+            &quot;last_name&quot;: &quot;Bailey&quot;,
+            &quot;email&quot;: &quot;hokeefe@hotmail.com&quot;,
+            &quot;birthdate&quot;: &quot;1970-05-08&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: [
+                {
+                    &quot;id&quot;: 6,
+                    &quot;value&quot;: &quot;nobis&quot;,
+                    &quot;member_id&quot;: 6
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;first_name&quot;: &quot;Charlene&quot;,
+            &quot;last_name&quot;: &quot;Dickens&quot;,
+            &quot;email&quot;: &quot;rpagac@gmail.com&quot;,
+            &quot;birthdate&quot;: &quot;1982-05-07&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: [
+                {
+                    &quot;id&quot;: 7,
+                    &quot;value&quot;: &quot;sed&quot;,
+                    &quot;member_id&quot;: 7
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;first_name&quot;: &quot;Jo&quot;,
+            &quot;last_name&quot;: &quot;Goyette&quot;,
+            &quot;email&quot;: &quot;fkiehn@hotmail.com&quot;,
+            &quot;birthdate&quot;: &quot;2013-06-28&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: [
+                {
+                    &quot;id&quot;: 8,
+                    &quot;value&quot;: &quot;quo&quot;,
+                    &quot;member_id&quot;: 8
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;first_name&quot;: &quot;Queenie&quot;,
+            &quot;last_name&quot;: &quot;Predovic&quot;,
+            &quot;email&quot;: &quot;dianna96@gmail.com&quot;,
+            &quot;birthdate&quot;: &quot;1983-12-13&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: [
+                {
+                    &quot;id&quot;: 9,
+                    &quot;value&quot;: &quot;repellat&quot;,
+                    &quot;member_id&quot;: 9
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;first_name&quot;: &quot;Tyrell&quot;,
+            &quot;last_name&quot;: &quot;Erdman&quot;,
+            &quot;email&quot;: &quot;heidenreich.demarcus@gmail.com&quot;,
+            &quot;birthdate&quot;: &quot;1982-07-27&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+            &quot;memberTags&quot;: [
+                {
+                    &quot;id&quot;: 10,
+                    &quot;value&quot;: &quot;et&quot;,
+                    &quot;member_id&quot;: 10
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;first_name&quot;: &quot;John&quot;,
+            &quot;last_name&quot;: &quot;Doe&quot;,
+            &quot;email&quot;: &quot;john@doe.com&quot;,
+            &quot;birthdate&quot;: &quot;2000-01-01&quot;,
+            &quot;created_at&quot;: &quot;2024-04-22T08:23:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-04-22T08:23:52.000000Z&quot;,
+            &quot;memberTags&quot;: []
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-members" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-members"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-members"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-members" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-members">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-members" data-method="GET"
+      data-path="api/members"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-members', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-members"
+                    onclick="tryItOut('GETapi-members');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-members"
+                    onclick="cancelTryOut('GETapi-members');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-members"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/members</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-members"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-members"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>with</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="with"                data-endpoint="GETapi-members"
+               value="memberTags"
+               data-component="query">
+    <br>
+<p>The relationship to load Example: <code>memberTags</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>memberTags</code></li></ul>
+            </div>
+                </form>
+
+                    <h2 id="members-GETapi-members--member_id-">Get a member</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-members--member_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://eos-members.test/api/members/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'query' =&gt; [
+            'with' =&gt; 'memberTags',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://eos-members.test/api/members/1"
+);
+
+const params = {
+    "with": "memberTags",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-members--member_id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;first_name&quot;: &quot;Jasper&quot;,
+        &quot;last_name&quot;: &quot;Willms&quot;,
+        &quot;email&quot;: &quot;jwalker@yahoo.com&quot;,
+        &quot;birthdate&quot;: &quot;1977-08-01&quot;,
+        &quot;created_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-04-22T07:56:39.000000Z&quot;,
+        &quot;memberTags&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;value&quot;: &quot;neque&quot;,
+                &quot;member_id&quot;: 1
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;value&quot;: &quot;voluptas&quot;,
+                &quot;member_id&quot;: 1
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;value&quot;: &quot;quia&quot;,
+                &quot;member_id&quot;: 1
+            },
+            {
+                &quot;id&quot;: 4,
+                &quot;value&quot;: &quot;animi&quot;,
+                &quot;member_id&quot;: 1
+            },
+            {
+                &quot;id&quot;: 5,
+                &quot;value&quot;: &quot;at&quot;,
+                &quot;member_id&quot;: 1
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-members--member_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-members--member_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-members--member_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-members--member_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-members--member_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-members--member_id-" data-method="GET"
+      data-path="api/members/{member_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-members--member_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-members--member_id-"
+                    onclick="tryItOut('GETapi-members--member_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-members--member_id-"
+                    onclick="cancelTryOut('GETapi-members--member_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-members--member_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/members/{member_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-members--member_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-members--member_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>member_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="member_id"                data-endpoint="GETapi-members--member_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the member Example: <code>1</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>with</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="with"                data-endpoint="GETapi-members--member_id-"
+               value="memberTags"
+               data-component="query">
+    <br>
+<p>The relationship to load Example: <code>memberTags</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>memberTags</code></li></ul>
+            </div>
+                </form>
+
+                    <h2 id="members-POSTapi-members">Store a member</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-members">
+<blockquote>Example request:</blockquote>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://eos-members.test/api/members';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'first_name' =&gt; 'John',
+            'last_name' =&gt; 'Doe',
+            'email' =&gt; 'john@doe.com',
+            'birthdate' =&gt; '2000-01-01',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://eos-members.test/api/members"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john@doe.com",
+    "birthdate": "2000-01-01"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-members">
+</span>
+<span id="execution-results-POSTapi-members" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-members"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-members"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-members" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-members">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-members" data-method="POST"
+      data-path="api/members"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-members', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-members"
+                    onclick="tryItOut('POSTapi-members');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-members"
+                    onclick="cancelTryOut('POSTapi-members');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-members"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/members</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-members"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-members"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="first_name"                data-endpoint="POSTapi-members"
+               value="John"
+               data-component="body">
+    <br>
+<p>Example: <code>John</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="last_name"                data-endpoint="POSTapi-members"
+               value="Doe"
+               data-component="body">
+    <br>
+<p>Example: <code>Doe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-members"
+               value="john@doe.com"
+               data-component="body">
+    <br>
+<p>Example: <code>john@doe.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>birthdate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="birthdate"                data-endpoint="POSTapi-members"
+               value="2000-01-01"
+               data-component="body">
+    <br>
+<p>Example: <code>2000-01-01</code></p>
+        </div>
+        </form>
+
+                    <h2 id="members-PUTapi-members--member_id-">Update a member</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-members--member_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://eos-members.test/api/members/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'first_name' =&gt; 'John',
+            'last_name' =&gt; 'Doe',
+            'email' =&gt; 'john@doe.com',
+            'birthdate' =&gt; '2000-01-01',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://eos-members.test/api/members/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john@doe.com",
+    "birthdate": "2000-01-01"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-members--member_id-">
+</span>
+<span id="execution-results-PUTapi-members--member_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-members--member_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-members--member_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-members--member_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-members--member_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-members--member_id-" data-method="PUT"
+      data-path="api/members/{member_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-members--member_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-members--member_id-"
+                    onclick="tryItOut('PUTapi-members--member_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-members--member_id-"
+                    onclick="cancelTryOut('PUTapi-members--member_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-members--member_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/members/{member_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-members--member_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-members--member_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>member_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="member_id"                data-endpoint="PUTapi-members--member_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the member Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="first_name"                data-endpoint="PUTapi-members--member_id-"
+               value="John"
+               data-component="body">
+    <br>
+<p>Example: <code>John</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="last_name"                data-endpoint="PUTapi-members--member_id-"
+               value="Doe"
+               data-component="body">
+    <br>
+<p>Example: <code>Doe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="PUTapi-members--member_id-"
+               value="john@doe.com"
+               data-component="body">
+    <br>
+<p>Example: <code>john@doe.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>birthdate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="birthdate"                data-endpoint="PUTapi-members--member_id-"
+               value="2000-01-01"
+               data-component="body">
+    <br>
+<p>Example: <code>2000-01-01</code></p>
+        </div>
+        </form>
+
+                    <h2 id="members-DELETEapi-members--member_id-">Delete a member</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-members--member_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://eos-members.test/api/members/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://eos-members.test/api/members/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-members--member_id-">
+</span>
+<span id="execution-results-DELETEapi-members--member_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-members--member_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-members--member_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-members--member_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-members--member_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-members--member_id-" data-method="DELETE"
+      data-path="api/members/{member_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-members--member_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-members--member_id-"
+                    onclick="tryItOut('DELETEapi-members--member_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-members--member_id-"
+                    onclick="cancelTryOut('DELETEapi-members--member_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-members--member_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/members/{member_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-members--member_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-members--member_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>member_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="member_id"                data-endpoint="DELETEapi-members--member_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the member Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="members-POSTapi-members--member_id--member_tag--member_tag_id--link">Attach a member tag to a member</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-members--member_id--member_tag--member_tag_id--link">
+<blockquote>Example request:</blockquote>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://eos-members.test/api/members/1/member_tag/1/link';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content' =&gt; 'application/json',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://eos-members.test/api/members/1/member_tag/1/link"
+);
+
+const headers = {
+    "Content": "application/json",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-members--member_id--member_tag--member_tag_id--link">
+</span>
+<span id="execution-results-POSTapi-members--member_id--member_tag--member_tag_id--link" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-members--member_id--member_tag--member_tag_id--link"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-members--member_id--member_tag--member_tag_id--link"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-members--member_id--member_tag--member_tag_id--link" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-members--member_id--member_tag--member_tag_id--link">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-members--member_id--member_tag--member_tag_id--link" data-method="POST"
+      data-path="api/members/{member_id}/member_tag/{member_tag_id}/link"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-members--member_id--member_tag--member_tag_id--link', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-members--member_id--member_tag--member_tag_id--link"
+                    onclick="tryItOut('POSTapi-members--member_id--member_tag--member_tag_id--link');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-members--member_id--member_tag--member_tag_id--link"
+                    onclick="cancelTryOut('POSTapi-members--member_id--member_tag--member_tag_id--link');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-members--member_id--member_tag--member_tag_id--link"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/members/{member_id}/member_tag/{member_tag_id}/link</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content"                data-endpoint="POSTapi-members--member_id--member_tag--member_tag_id--link"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-members--member_id--member_tag--member_tag_id--link"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-members--member_id--member_tag--member_tag_id--link"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>member_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="member_id"                data-endpoint="POSTapi-members--member_id--member_tag--member_tag_id--link"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the member Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>member_tag_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="member_tag_id"                data-endpoint="POSTapi-members--member_id--member_tag--member_tag_id--link"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the member tag Example: <code>1</code></p>
+            </div>
+                    </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

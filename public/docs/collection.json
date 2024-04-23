@@ -1,0 +1,298 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/eos-members.test"
+        }
+    ],
+    "info": {
+        "name": "EOS - members",
+        "_postman_id": "263e0e24-ba55-4713-8c33-138a6fa55728",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Members",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get a list of members",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/members",
+                            "query": [
+                                {
+                                    "key": "with",
+                                    "value": "memberTags",
+                                    "description": "The relationship to load",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/members?with=memberTags"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"first_name\":\"Jasper\",\"last_name\":\"Willms\",\"email\":\"jwalker@yahoo.com\",\"birthdate\":\"1977-08-01\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[{\"id\":1,\"value\":\"neque\",\"member_id\":1},{\"id\":2,\"value\":\"voluptas\",\"member_id\":1},{\"id\":3,\"value\":\"quia\",\"member_id\":1},{\"id\":4,\"value\":\"animi\",\"member_id\":1},{\"id\":5,\"value\":\"at\",\"member_id\":1}]},{\"id\":2,\"first_name\":\"Chauncey\",\"last_name\":\"Braun\",\"email\":\"wilber02@yahoo.com\",\"birthdate\":\"1972-12-08\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[]},{\"id\":3,\"first_name\":\"Melvina\",\"last_name\":\"Volkman\",\"email\":\"tad86@greenfelder.biz\",\"birthdate\":\"2010-08-13\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[]},{\"id\":4,\"first_name\":\"Elissa\",\"last_name\":\"Fisher\",\"email\":\"henri.brakus@hotmail.com\",\"birthdate\":\"1994-10-21\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[]},{\"id\":5,\"first_name\":\"Shanon\",\"last_name\":\"Wisozk\",\"email\":\"rosella.hoppe@corwin.com\",\"birthdate\":\"2008-11-14\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[]},{\"id\":6,\"first_name\":\"Araceli\",\"last_name\":\"Bailey\",\"email\":\"hokeefe@hotmail.com\",\"birthdate\":\"1970-05-08\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[{\"id\":6,\"value\":\"nobis\",\"member_id\":6}]},{\"id\":7,\"first_name\":\"Charlene\",\"last_name\":\"Dickens\",\"email\":\"rpagac@gmail.com\",\"birthdate\":\"1982-05-07\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[{\"id\":7,\"value\":\"sed\",\"member_id\":7}]},{\"id\":8,\"first_name\":\"Jo\",\"last_name\":\"Goyette\",\"email\":\"fkiehn@hotmail.com\",\"birthdate\":\"2013-06-28\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[{\"id\":8,\"value\":\"quo\",\"member_id\":8}]},{\"id\":9,\"first_name\":\"Queenie\",\"last_name\":\"Predovic\",\"email\":\"dianna96@gmail.com\",\"birthdate\":\"1983-12-13\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[{\"id\":9,\"value\":\"repellat\",\"member_id\":9}]},{\"id\":10,\"first_name\":\"Tyrell\",\"last_name\":\"Erdman\",\"email\":\"heidenreich.demarcus@gmail.com\",\"birthdate\":\"1982-07-27\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[{\"id\":10,\"value\":\"et\",\"member_id\":10}]},{\"id\":11,\"first_name\":\"John\",\"last_name\":\"Doe\",\"email\":\"john@doe.com\",\"birthdate\":\"2000-01-01\",\"created_at\":\"2024-04-22T08:23:52.000000Z\",\"updated_at\":\"2024-04-22T08:23:52.000000Z\",\"memberTags\":[]}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a member",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/members\/:member_id",
+                            "query": [
+                                {
+                                    "key": "with",
+                                    "value": "memberTags",
+                                    "description": "The relationship to load",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/members\/:member_id?with=memberTags",
+                            "variable": [
+                                {
+                                    "id": "member_id",
+                                    "key": "member_id",
+                                    "value": "1",
+                                    "description": "The ID of the member"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"first_name\":\"Jasper\",\"last_name\":\"Willms\",\"email\":\"jwalker@yahoo.com\",\"birthdate\":\"1977-08-01\",\"created_at\":\"2024-04-22T07:56:39.000000Z\",\"updated_at\":\"2024-04-22T07:56:39.000000Z\",\"memberTags\":[{\"id\":1,\"value\":\"neque\",\"member_id\":1},{\"id\":2,\"value\":\"voluptas\",\"member_id\":1},{\"id\":3,\"value\":\"quia\",\"member_id\":1},{\"id\":4,\"value\":\"animi\",\"member_id\":1},{\"id\":5,\"value\":\"at\",\"member_id\":1}]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a member",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/members",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/members"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"John\",\"last_name\":\"Doe\",\"email\":\"john@doe.com\",\"birthdate\":\"2000-01-01\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update a member",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/members\/:member_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/members\/:member_id",
+                            "variable": [
+                                {
+                                    "id": "member_id",
+                                    "key": "member_id",
+                                    "value": "1",
+                                    "description": "The ID of the member"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"John\",\"last_name\":\"Doe\",\"email\":\"john@doe.com\",\"birthdate\":\"2000-01-01\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a member",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/members\/:member_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/members\/:member_id",
+                            "variable": [
+                                {
+                                    "id": "member_id",
+                                    "key": "member_id",
+                                    "value": "1",
+                                    "description": "The ID of the member"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Attach a member tag to a member",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/members\/:member_id\/member_tag\/:member_tag_id\/link",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/members\/:member_id\/member_tag\/:member_tag_id\/link",
+                            "variable": [
+                                {
+                                    "id": "member_id",
+                                    "key": "member_id",
+                                    "value": "1",
+                                    "description": "The ID of the member"
+                                },
+                                {
+                                    "id": "member_tag_id",
+                                    "key": "member_tag_id",
+                                    "value": "1",
+                                    "description": "The ID of the member tag"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
